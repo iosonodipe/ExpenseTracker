@@ -1,0 +1,268 @@
+{
+    "accounts": [
+        {
+            "id": 1,
+            "name": "Banco BPM"
+        }
+    ],
+    "causals":
+    [
+        {
+            "id": 1,
+            "description": "Prelievo",
+            "credit_card": false,
+            "operation": 0
+        },
+        {
+            "id": 2,
+            "description": "Assegno",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 3,
+            "description": "Carta di credito",
+            "credit_card": true,
+            "operation": 0,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 4,
+            "description": "Varie",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 5,
+            "description": "POS",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 6,
+            "description": "Gas e Luce",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 7,
+            "description": "Fon. Italia",
+            "credit_card": false,
+            "operation": 0,
+            "fund": true,
+            "monthly": true
+        },
+        {
+            "id": 8,
+            "description": "Fon. Innovaz.",
+            "credit_card": false,
+            "operation": 0,
+            "fund": true,
+            "monthly": true
+        },
+        {
+            "id": 9,
+            "description": "Titoli stato",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 10,
+            "description": "Prestiti",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 11,
+            "description": "Altri fondi",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 12,
+            "description": "Debiti v/ter",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 13,
+            "description": "Azioni",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 14,
+            "description": "Fon. Europa",
+            "credit_card": false,
+            "operation": 0,
+            "fund": true,
+            "monthly": true
+        },
+        {
+            "id": 15,
+            "description": "Fon. America",
+            "credit_card": false,
+            "operation": 0,
+            "fund": true,
+            "monthly": true
+        },
+        {
+            "id": 16,
+            "description": "Stanhome",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 17,
+            "description": "Giroconto -",
+            "credit_card": false,
+            "operation": 0,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 20,
+            "description": "Stipendi",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 21,
+            "description": "Versamenti",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 22,
+            "description": "Interessi",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 23,
+            "description": "Rientro BOT",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 24,
+            "description": "Rientro Pres.",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 25,
+            "description": "Debiti",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 26,
+            "description": "Chius. fondo",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 27,
+            "description": "Prestiti da",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 28,
+            "description": "Cedole BTP",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 29,
+            "description": "Rientro F.It",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 30,
+            "description": "Rientro F.In",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 31,
+            "description": "Rientro azioni",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": false
+        },
+        {
+            "id": 32,
+            "description": "Dividendi Ti",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": true
+        },
+        {
+            "id": 33,
+            "description": "Giroconto +",
+            "credit_card": false,
+            "operation": 1,
+            "fund": false,
+            "monthly": true
+        }
+    ],
+    "expenses":[
+        {
+            "id": 1,
+            "account": 1,
+            "date": "20/08/2024",
+            "description": "Test",
+            "amount": 100,
+            "causal": 1,
+            "quotas": 0
+        }
+    ]
+}
