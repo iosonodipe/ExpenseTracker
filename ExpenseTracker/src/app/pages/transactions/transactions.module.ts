@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PaginatorModule } from 'primeng/paginator';
+import { TableModule } from 'primeng/table';
+
 
 import { TransactionsRoutingModule } from './transactions-routing.module';
 import { TransactionsComponent } from './transactions.component';
@@ -11,7 +14,9 @@ import { TransactionsComponent } from './transactions.component';
   ],
   imports: [
     CommonModule,
-    TransactionsRoutingModule
+    TransactionsRoutingModule,
+    PaginatorModule,
+    TableModule
   ]
 })
 export class TransactionsModule { }
