@@ -30,9 +30,9 @@ export class TransactionsComponent implements OnInit {
     const currentPage = this.first / this.rows + 1;
 
     this.transactionsService.getExpensesPaginated(currentPage, this.rows).subscribe(
-      (expenses) => {
-        this.expenses = expenses;
-        this.totalRecords = 120;  // Imposta il numero totale di record (in futuro, puoi farlo dinamicamente)
+      (data) => {
+        this.expenses = data.expenses;
+        this.totalRecords = data.totalRecords;  // Imposta il numero totale di record (in futuro, puoi farlo dinamicamente)
       },
       (error) => {
         console.error('Errore durante il caricamento delle spese', error);

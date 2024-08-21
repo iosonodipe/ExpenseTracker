@@ -17,7 +17,7 @@
                 <td>{{ expense.id }}</td>
                 <td>{{ expense.account }}</td>
                 <td>{{ expense.date }}</td>
-                <td>{{ expense.amount }}€</td>
+                <td [ngClass]="{'text-red': expense.causal >= 1 && expense.causal <= 19, 'text-green': expense.causal >= 20}">{{ expense.amount }}€</td>
                 <td>{{ expense.description }}</td>
                 <td>{{ expense.causal }}</td>
                 <td>{{ expense.quotes }}</td>
