@@ -1,28 +1,35 @@
 <div *ngIf="expenses.length > 0">
   <div class="card">
     <p-table [value]="expenses" [tableStyle]="{ 'min-width': '50rem' }">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>ID</th>
-                <th>Account</th>
-                <th>Data</th>
-                <th>Importo</th>
-                <th>Descrizione</th>
-                <th>Causale</th>
-                <th>Quote</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-expense>
-            <tr>
-                <td>{{ expense.id }}</td>
-                <td>{{ expense.account }}</td>
-                <td>{{ expense.date }}</td>
-                <td [ngClass]="{'text-red': expense.causal >= 1 && expense.causal <= 19, 'text-green': expense.causal >= 20}">{{ expense.amount }}€</td>
-                <td>{{ expense.description }}</td>
-                <td>{{ expense.causal }}</td>
-                <td>{{ expense.quotes }}</td>
-            </tr>
-        </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>ID</th>
+          <th>Account</th>
+          <th>Data</th>
+          <th>Importo</th>
+          <th>Descrizione</th>
+          <th>Causale</th>
+          <th>Quote</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-expense>
+        <tr>
+          <td>{{ expense.id }}</td>
+          <td>{{ formatAccount(expense.account) }}</td>
+          <td>{{ expense.date }}</td>
+          <td
+            [ngClass]="{
+              'text-red': expense.causal >= 1 && expense.causal <= 19,
+              'text-green': expense.causal >= 20
+            }"
+          >
+            {{ formatAmount(expense.amount, expense.causal) }}
+          </td>
+          <td>{{ expense.description }}</td>
+          <td>{{ expense.causal }}</td>
+          <td>{{ expense.quotes }}</td>
+        </tr>
+      </ng-template>
     </p-table>
   </div>
 </div>
@@ -32,11 +39,12 @@
 
 <div class="card flex justify-content-center">
   <p-paginator
-      (onPageChange)="onPageChange($event)"
-      [first]="first"
-      [rows]="rows"
-      [totalRecords]="totalRecords"
-      [showCurrentPageReport]="true"
-      [showPageLinks]="true"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords}" />
+    (onPageChange)="onPageChange($event)"
+    [first]="first"
+    [rows]="rows"
+    [totalRecords]="totalRecords"
+    [showCurrentPageReport]="true"
+    [showPageLinks]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords}"
+  />
 </div>

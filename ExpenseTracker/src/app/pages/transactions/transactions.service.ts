@@ -2,12 +2,14 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Expense } from '../../models/expense';
+import { Account } from '../../models/account';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TransactionsService {
-  private apiUrl = 'http://localhost:3000/expenses';  // URL del tuo json-server
+  private expensesUrl = 'http://localhost:3000/expenses';  // URL del tuo json-server
+  private accountsUrl = 'http://localhost:3000/accounts';  // URL del tuo json-server
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +20,7 @@ export class TransactionsService {
       .set('_sort', 'id')  // Sostituisci 'id' con il campo che vuoi usare per l'ordinamento
       .set('_order', 'desc');  // Ordina in ordine decrescente
 
-    return this.http.get<Expense[]>(this.apiUrl, { params, observe: 'response' }).pipe(
+    return this.http.get<Expense[]>(this.expensesUrl, { params, observe: 'response' }).pipe(
       map(response => {
         const totalRecords = Number(response.headers.get('X-Total-Count'));  // Leggi l'intestazione
         const expenses = response.body || [];
@@ -27,5 +29,7 @@ export class TransactionsService {
     );
   }
 
-
+  getAccounts(): Observable<Account[]> {
+    return this.http.get<Account[]>(this.accountsUrl);
+  }
 }

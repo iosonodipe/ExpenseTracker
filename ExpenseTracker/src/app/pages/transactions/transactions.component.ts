@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PaginatorState } from 'primeng/paginator';  // Importa PaginatorState
 import { TransactionsService } from './transactions.service';
 import { Expense } from '../../models/expense';
+import { Account } from '../../models/account';
 
 @Component({
   selector: 'app-transactions',
@@ -13,11 +14,15 @@ export class TransactionsComponent implements OnInit {
   rows: number = 10;
   totalRecords: number = 0;
   expenses: Expense[] = [];
+  accounts: Account[] = [];
 
   constructor(private transactionsService: TransactionsService) {}
 
   ngOnInit() {
     this.loadExpenses();
+    this.loadAccounts();
+    console.log(this.accounts);
+
   }
 
   onPageChange(event: PaginatorState) {
@@ -39,4 +44,24 @@ export class TransactionsComponent implements OnInit {
       }
     );
   }
+
+  loadAccounts(){
+    this.transactionsService.getAccounts().subscribe(data => this.accounts = data);
+  }
+
+    // Formatta l'importo con il simbolo meno o più
+    formatAmount(amount: number, causal: number): string {
+      if (causal >= 1 && causal <= 19) {
+        return `- ${amount.toFixed(2)} €`;
+      } else if (causal >= 20) {
+        return `+ ${amount.toFixed(2)} €`;
+      } else {
+        return `${amount.toFixed(2)} €`; // Caso di default
+      }
+    }
+
+    formatAccount(account: number): string {
+      const foundAccount = this.accounts.find(a => a.id === account);
+      return foundAccount ? foundAccount.name : 'Nessun conto trovato';
+    }
 }
